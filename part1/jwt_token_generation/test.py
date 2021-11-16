@@ -13,10 +13,6 @@ basepath = Path(*parts[:basefolder_index + 1])
 sys.path.append(str(basepath))
 from ttools.skyprotests.tests import SkyproTestCase, StdoutCapturing  # noqa: E402
 
-def func():
-    test_list = ['test1', 'test2']
-    return test_list
-
 class JwtTestCase(SkyproTestCase):
     def setUp(self):
         self.var_name = 'access_token'

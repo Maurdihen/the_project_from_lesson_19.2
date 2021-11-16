@@ -14,9 +14,6 @@ sys.path.append(str(basepath))
 from ttools.skyprotests.tests import SkyproTestCase             # noqa: E402
 from ttools.skyprotests.tests_mixins import ResponseTestsMixin  # noqa: E402
 
-def func():
-    test_list = ['test1', 'test2']
-    return test_list
 
 class DecorTestCase(SkyproTestCase, ResponseTestsMixin):
     def setUp(self):
