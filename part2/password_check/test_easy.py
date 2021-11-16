@@ -33,12 +33,11 @@ class PasswordTestCase(SkyproTestCase):
         func = getattr(main, self.func_name)
         author_func = getattr(solution, self.func_name)
         self.assertIsNotNone(
-            func('HardPassword'),
+            func('T3$tP4ssword', '632a4cb0c45d0f570a4907cb8dbc3a69'),
             "%@Проверьте что функция не возвращает None"
         )
-
         self.assertTrue(
-            func('HardPassword')==author_func('HardPassword'),
+            func('T3$tP4ssword', '632a4cb0c45d0f570a4907cb8dbc3a69')==author_func('T3$tP4ssword', '632a4cb0c45d0f570a4907cb8dbc3a69'),
            "%@Проверьте что в функции используется алгоритм md5")
 
 if __name__ == "__main__":

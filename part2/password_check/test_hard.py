@@ -33,12 +33,24 @@ class PasswordTestCase(SkyproTestCase):
         func = getattr(main, self.func_name)
         author_func = getattr(solution, self.func_name)
         self.assertIsNotNone(
-            func('HardPassword', b'SuperSalt'),
+            func(
+                b'\x87jZ\x17\xf6g\xbb\xd3q\xf9\xb9t\x06O\x08K\x9a\xf4\xa2?YD$\x90N@@\xacodUP',
+                'T3$tP4ssword', 
+                b'testSalt', 
+                'sha256'),
             "%@Проверьте что функция не возвращает None"
         )
         
         self.assertTrue(
-            func('HardPassword', b'SuperSalt')==author_func('HardPassword', b'SuperSalt'),
+            func(
+                b'\x87jZ\x17\xf6g\xbb\xd3q\xf9\xb9t\x06O\x08K\x9a\xf4\xa2?YD$\x90N@@\xacodUP',
+                'T3$tP4ssword',
+                b'testSalt', 
+                'sha256')==author_func(
+                    b'\x87jZ\x17\xf6g\xbb\xd3q\xf9\xb9t\x06O\x08K\x9a\xf4\xa2?YD$\x90N@@\xacodUP',
+                    'T3$tP4ssword',
+                    b'testSalt',
+                    'sha256'),
            "%@Проверьте что в функции используется алгоритм sha256")
 
 if __name__ == "__main__":
