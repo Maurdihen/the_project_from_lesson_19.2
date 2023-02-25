@@ -1,0 +1,15 @@
+POST http://127.0.0.1:5001/auth/
+Content-Type: application/json
+
+{
+  "username": "john",
+  "password": "test"
+}
+
+###
+PUT http://127.0.0.1:5001/auth/
+Content-Type: application/json
+
+{
+  "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE2ODg1Nzk5OTF9.iQaoHGzTqtVl2seVSbYTgi7uUziT9xNDcGJnx-H3USA"
+}

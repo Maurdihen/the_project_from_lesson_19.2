@@ -1,0 +1,17 @@
+GET http://127.0.0.1:5001/users/
+Accept: application/json
+
+###
+POST http://127.0.0.1:5001/users/
+Content-Type: application/json
+
+{
+  "user_name": "john",
+  "password": "test",
+  "role": "admin"
+}
+
+###
+DELETE http://127.0.0.1:5001/users/116
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE2NzczNDk4MDh9.cbKAZzcSvCGTWvTcSNptOR7iymV4I9qUESlNKVugoHU
